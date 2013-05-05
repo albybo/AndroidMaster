@@ -1,14 +1,13 @@
 package it.albertomarchesini.androbix;
 
-import android.app.Activity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+
 import android.view.Menu;
 import android.view.View;
-
-import obix.*;
-import obix.net.*;
 
 public class MainActivity extends Activity {
 
@@ -29,12 +28,14 @@ public class MainActivity extends Activity {
 	
 	public void iniziaTutto(View view) {
 		
-		Uri uri = new Uri("indirizzo");
-		try {
-		MiaProva.esegui();
-		}
-		catch(Exception exc) {
-			Log.v("Obix",exc.getMessage()); finish(); };
+		Intent intent = new Intent(this, ObixActivity.class);
+
+	//	  EditText editText = (EditText) findViewById(R.id.edit_message);
+	//	    String message = editText.getText().toString();
+	//	    intent.putExtra(EXTRA_MESSAGE, message);
+		    startActivity(intent);
+
+
 		
 		
 
